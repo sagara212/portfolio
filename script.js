@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-link');
 
     const options = {
-        threshold: 0.7
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Menyesuaikan threshold
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -15,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         link.classList.add('active');
                     }
                 });
+                console.log(`Section ${entry.target.id} is intersecting`); // Debugging log
             }
         });
     }, options);
