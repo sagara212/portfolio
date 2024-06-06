@@ -1,4 +1,28 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const options = {
+        threshold: 0.7
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === entry.target.id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
     // Image transition effect
     const images = document.querySelectorAll('.profileimage, .aboutimg, .cimg');
     
@@ -18,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Dark/light mode toggle
     const body = document.body;
     const modeIcon = document.getElementById("mode-icon");
-    const navLinks = document.querySelectorAll(".nav-link");
     const contactSection = document.getElementById("contact");
 
     function updateMode() {
