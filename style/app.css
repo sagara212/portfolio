@@ -1,4 +1,40 @@
 /* Global styles */
+/* Import Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Mengatur font secara global */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Menetapkan font khusus untuk nama dan teks */
+.hallo, .nama1, .nama2 {
+    font-family: 'Poppins', sans-serif; /* Gunakan font yang sama */
+}
+
+.nama1 {
+    font-weight: 600; /* Lebih tebal untuk nama pertama */
+}
+
+.nama2 {
+    font-weight: 600; /* Lebih tebal untuk nama kedua */
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    .nama1, .nama2 {
+        font-size: 5vw; /* Mengatur ukuran font responsif pada layar kecil */
+        
+    }
+
+    .hallo {
+        font-size: 4vw; /* Ukuran font untuk Hallo I'm pada layar kecil */
+    }
+}
+
+
+
+
 body {
   background-color: var(--bg-color-light);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
@@ -385,6 +421,42 @@ body.dark-mode .tecnology .tollsicon {
 
 @media (max-width: 768px) {
   .project .container {
+    max-width: 80%;
+    margin-top: -40px;
+  }
+}
+
+/* award section styles */
+.award {
+  margin-top: 140px;
+}
+
+.award .container {
+  max-width: 70%;
+  margin-top: -20px;
+}
+
+.award .container .col {
+  display: flex;
+  align-items: stretch;
+  padding: 10px;
+}
+
+.award .container .card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+}
+
+
+
+.award .container .card-body {
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .award .container {
     max-width: 80%;
     margin-top: -40px;
   }
