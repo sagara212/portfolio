@@ -365,6 +365,30 @@ body.dark-mode .tecnology .tollsicon {
 }
 
 /* Certification section styles */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black; /* Mengubah warna panah menjadi hitam */
+    border-radius: 50%; /* Opsional: Membuat tampilan lebih menarik */
+    width: 40px; /* Ukuran panah */
+    height: 40px;
+}
+
+.carousel-control-prev-icon::after,
+.carousel-control-next-icon::after {
+    content: ''; /* Hilangkan konten bawaan Bootstrap jika ada */
+}
+
+.carousel-indicators button {
+  background-color: black; /* Warna indikator default menjadi hitam */
+  border: none; /* Menghilangkan border bawaan */
+}
+
+.carousel-indicators .active {
+  background-color: black; /* Warna indikator aktif juga menjadi hitam */
+  opacity: 0.7; /* Opsional: Mengurangi opacity untuk efek visual */
+}
+
+
 .certification {
   margin-top: 60px;
 }
